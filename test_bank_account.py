@@ -12,14 +12,18 @@ class TestBankAccount(unittest.TestCase): #this is a test framework used to test
     def test_initial_balance(self): #Checks the inital balance is 100
         self.assertEqual(self.account.balance, 100)
 
+
+    #Deposit test functions
+
     def test_deposit_positive_amount(self): #Checks if the deposit function works
-        self.account.deposit(50)
+        self.account.deposit(-50)
         self.assertEqual(self.account.balance, 150)
-    
     
     def test_deposit_negative_amount(self):  #Checks if the negative ValueError works
         with self.assertRaises(ValueError):
             self.account.deposit(-40)
+    
+    #Withdraw test functions
 
     def test_withdraw_sufficient_funds(self): #Checks if withdrawal function works
         self.account.withdraw(30)
@@ -36,6 +40,7 @@ class TestBankAccount(unittest.TestCase): #this is a test framework used to test
     def test_withdraw_negative_amount(self): #Checks if a negative amount is withdrawn, if so ValueError is shown
         with self.assertRaises(ValueError):
             self.account.withdraw(-50)
+
 
 if __name__ == '__main__': #checks if the test file is being run
     unittest.main()
