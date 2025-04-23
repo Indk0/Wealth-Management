@@ -42,5 +42,5 @@ class TestBankAccount(unittest.TestCase): #this is a test framework used to test
             self.account.withdraw(-50)
 
 
-if __name__ == '__main__': #checks if the test file is being run
+if __name__ == '__main__': #checks if the test file is running
     unittest.main()
