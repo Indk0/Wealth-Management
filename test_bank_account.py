@@ -16,12 +16,12 @@ class TestBankAccount(unittest.TestCase): #this is a test framework used to test
     #Deposit test functions
 
     def test_deposit_positive_amount(self): #Checks if the deposit function works
-        self.account.deposit(-50)
+        self.account.deposit(50)
         self.assertEqual(self.account.balance, 150)
     
     def test_deposit_negative_amount(self):  #Checks if the negative ValueError works
         with self.assertRaises(ValueError):
-            self.account.deposit(-40)
+            self.account.deposit(-50)
     
     #Withdraw test functions
 
